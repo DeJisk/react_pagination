@@ -60,17 +60,11 @@ export const App: React.FC = () => {
         total={total}
         perPage={itemsPerPage}
         currentPage={currentPage}
+        items={items}
         onPageChange={value => {
           updateParams(value, itemsPerPage);
         }}
       />
-      <ul>
-        {items.map((numberOfPage, index) => (
-          <li key={index} data-cy="item">
-            {numberOfPage}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };

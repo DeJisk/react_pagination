@@ -2,6 +2,7 @@ interface Props {
   total: number;
   perPage: number;
   currentPage: number;
+  items: string[];
   onPageChange: (page: number) => void;
 }
 
@@ -9,6 +10,7 @@ export const Pagination: React.FC<Props> = ({
   total,
   perPage,
   currentPage,
+  items,
   onPageChange,
 }) => {
   const countPages =
@@ -69,6 +71,14 @@ export const Pagination: React.FC<Props> = ({
             »
           </a>
         </li>
+      </ul>
+
+      <ul>
+        {items.map((numberOfPage, index) => (
+          <li key={index} data-cy="item">
+            {numberOfPage}
+          </li>
+        ))}
       </ul>
     </>
   );
